@@ -298,3 +298,11 @@ window.addEventListener('DOMContentLoaded', async () => {
     wholesaleothersChart.toggleSeries(checkbox.value)
   }
 
+  function toggleSeries(checkbox) {
+   othersChart.toggleSeries(checkbox.value)
+  }
+
+  function toggleSeries(checkbox) {
+    accomodationChart.toggleSeries(checkbox.value)
+  }
+
