@@ -1,3 +1,15 @@
+const w = window.innerWidth;
+const h = window.innerHeight; 
+
+let chartHeight = '600px';
+let chartWidth = '700px';
+
+if  (w <= 900){
+    chartHeight = (h - 20) + 'px';
+    chartWidth = (w - 20) + 'px';
+}
+
+
 async function loadData() {
     const response = await axios.get('data/db.json');
     console.log(response)
@@ -11,8 +23,8 @@ const manconOptions = {
     chart: {
         id: 'manconChart',
         type: 'line',
-        height: "auto",
-        width: "800px",
+        height: chartHeight,
+        width: chartWidth,
         group: 'goods-chart',
         // foreColor:'#FF0000',
         // background: '#FFA500'
@@ -37,8 +49,8 @@ const othersOptions = {
     chart: {
         id: 'othersChart',
         type: 'area',
-        height: "auto",
-        width: "800px",
+        height: chartHeight,
+        width: chartWidth,
         group: 'goods-chart'
         },
         theme: {
@@ -62,8 +74,8 @@ const wholesaleothersOptions = {
     chart: {
         id: 'wholesaleChart',
         type: 'line',
-        height: "auto",
-        width: "800px",
+        height: chartHeight,
+        width: chartWidth,
         group: 'services-chart'
         },
         theme: {
@@ -84,8 +96,8 @@ const accomodationOptions = {
     chart: {
         id: 'accomodationChart',
         type: 'area',
-        height: "auto",
-        width: "800px",
+        height: chartHeight,
+        width: chartWidth,
         group: 'services-chart'
         },
         theme: {
@@ -104,6 +116,10 @@ const accomodationOptions = {
 }
 
 
+
+
+
+
 // CREATE CHART - GOODS PRODUCING
 const manconChart = new ApexCharts(document.querySelector('#manconChart'), manconOptions);
 const othersChart = new ApexCharts(document.querySelector('#othersChart'), othersOptions);
@@ -111,7 +127,6 @@ const othersChart = new ApexCharts(document.querySelector('#othersChart'), other
 // CREATE CHART - SERVICES PRODUCING
 const wholesaleothersChart = new ApexCharts(document.querySelector('#wholesaleothersChart'), wholesaleothersOptions);
 const accomodationChart = new ApexCharts(document.querySelector('#accomodationChart'), accomodationOptions);
-
 
 
 // RENDER CHART - GOODS PRODUCING

@@ -20,14 +20,15 @@ p{
 }
 
 nav{
-	height: 50px;
-	display: flex;
+	height: auto;
 	align-items: center;
 	position: fixed;
 	z-index: 1;
-	left: 50%;
-	margin-left: -250px;
-	
+	/* left: 50%; */
+	/* margin-left: -250px; */
+	background-color: #010307;
+	width: 100%;
+
 }
 
 nav a{
@@ -43,6 +44,7 @@ nav a{
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	/* float: left; */
 }
 
 a:hover {
@@ -69,21 +71,21 @@ a:hover {
 }
 
 #about{
-	height: 50vh;
+	height: auto;
 	width: 100%;
 	background-color: #4D4D4D;
-	display: flex;
+	/* display: flex; */
 	align-items: center;
 	justify-content: center;
 }
 
-#about > p {
-	width: 80%;
+#about > div {
+
+	padding: 30px 160px;
+	/* width: 80%; */
 	color: #B3B3B3;
 	line-height: 1.8;
 }
-
-
 
 .chart-heading{
 	width: 100%;
@@ -94,8 +96,9 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 90vh;
+	padding: 20px;
 	background-color: #E6E6E6;
+	min-height: 400px;
 }
 
 #servicesContainer{
@@ -104,6 +107,18 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 90vh;
+	padding: 20px;
 	background-color: #E6E6E6;
+	min-height: 400px;
 }
+
+/* #wrapper{
+	width: 500px;
+	height: calc(100vh-20px);
+} */
+
+@media only screen and (max-width: 900px) {
+	#about > div {
+		padding: 20px;
+	}
+  }
