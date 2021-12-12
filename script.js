@@ -1,22 +1,23 @@
+
+// GET SCREEN HEIGHT & WIDTH
 const w = window.innerWidth;
-const h = window.innerHeight; 
+const h = window.innerHeight;
 
 let chartHeight = '600px';
 let chartWidth = '700px';
 
-if  (w <= 900){
+if (w <= 900) {
     chartHeight = (h - 20) + 'px';
     chartWidth = (w - 20) + 'px';
 }
 
-
 async function loadData() {
     const response = await axios.get('data/db.json');
-    console.log(response)
     return response.data.Level3;
 }
-
 loadData();
+
+
 
 // GOODS CHART GROUP
 const manconOptions = {
@@ -26,19 +27,17 @@ const manconOptions = {
         height: chartHeight,
         width: chartWidth,
         group: 'goods-chart',
-        // foreColor:'#FF0000',
-        // background: '#FFA500'
     },
-    // colors: ['#2e93fa', '#66DA26', '#546E7A', '#E91E63', '#FF9800'],
+
     theme: {
         monochrome: {
-          enabled: true,
-          color: '#0071BC',
-          shadeTo: 'light',
-          shadeIntensity: 0.65
+            enabled: true,
+            color: '#0071BC',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
         }
-      },
-      
+    },
+
     series: [],
     noData: {
         "text": "Loading..."
@@ -52,16 +51,16 @@ const othersOptions = {
         height: chartHeight,
         width: chartWidth,
         group: 'goods-chart'
-        },
-        theme: {
-            monochrome: {
-              enabled: true,
-              color: '#0071BC',
-              shadeTo: 'light',
-              shadeIntensity: 0.65
-            }
-          },
-        
+    },
+    theme: {
+        monochrome: {
+            enabled: true,
+            color: '#0071BC',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        }
+    },
+
     series: [
     ],
     noData: {
@@ -77,21 +76,22 @@ const wholesaleothersOptions = {
         height: chartHeight,
         width: chartWidth,
         group: 'services-chart'
-        },
-        theme: {
-            monochrome: {
-              enabled: true,
-              color: '#0071BC',
-              shadeTo: 'light',
-              shadeIntensity: 0.65
-            }
-          },
+    },
+    theme: {
+        monochrome: {
+            enabled: true,
+            color: '#0071BC',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        }
+    },
     series: [
     ],
     noData: {
         "text": "Loading..."
     }
 }
+
 const accomodationOptions = {
     chart: {
         id: 'accomodationChart',
@@ -99,26 +99,21 @@ const accomodationOptions = {
         height: chartHeight,
         width: chartWidth,
         group: 'services-chart'
-        },
-        theme: {
-            monochrome: {
-              enabled: true,
-              color: '#0071BC',
-              shadeTo: 'light',
-              shadeIntensity: 0.65
-            }
-          },
+    },
+    theme: {
+        monochrome: {
+            enabled: true,
+            color: '#0071BC',
+            shadeTo: 'light',
+            shadeIntensity: 0.65
+        }
+    },
     series: [
     ],
     noData: {
         "text": "Loading..."
     }
 }
-
-
-
-
-
 
 // CREATE CHART - GOODS PRODUCING
 const manconChart = new ApexCharts(document.querySelector('#manconChart'), manconOptions);
@@ -138,32 +133,44 @@ wholesaleothersChart.render()
 accomodationChart.render()
 
 
+
 // LOAD DATA - GOODS PRODUCING
 window.addEventListener('DOMContentLoaded', async () => {
+    filterGoods();
+})
+
+
+// LOAD DATA - SERVICES PRODUCING
+window.addEventListener('DOMContentLoaded', async () => {
+    filterServices();
+})
+
+
+// GOODS CHART FILTER
+async function filterGoods() {
     let series = await loadData();
     let manufacturingArray = [];
     let constructionArray = [];
     let othersArray = [];
-    // let caterArray = [];
-    // console.log("hello");
 
+    const selectedYear = document.querySelector('#yearSpan').value.split('-');
 
     series.map(data => {
-        if (data.year >= 2016 && data.level_3 == "Manufacturing") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Manufacturing") {
             manufacturingArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Construction") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Construction") {
             constructionArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Others") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Others") {
             othersArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
@@ -189,10 +196,10 @@ window.addEventListener('DOMContentLoaded', async () => {
             'data': othersArray,
         }
     ])
-})
+}
 
-// LOAD DATA - SERVICES PRODUCING
-window.addEventListener('DOMContentLoaded', async () => {
+// SERVICES CHART FILTER
+async function filterServices() {
     let series = await loadData();
     let wholesaleArray = [];
     let transportationArray = [];
@@ -201,54 +208,53 @@ window.addEventListener('DOMContentLoaded', async () => {
     let financialArray = [];
     let realestateArray = [];
     let otherservicesArray = [];
-    // let caterArray = [];
-    // // console.log("hello");
 
+    const selectedYear = document.querySelector('#yearSpan').value.split('-');
 
     series.map(data => {
-        if (data.year >= 2016 && data.level_3 == "Wholesale & Retail Trade") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Wholesale & Retail Trade") {
             wholesaleArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Transportation & Storage") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Transportation & Storage") {
             transportationArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Accommodation & Food Services") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Accommodation & Food Services") {
             accomodationArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Information & Communications") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Information & Communications") {
             informationArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Financial & Insurance Services") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Financial & Insurance Services") {
             financialArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Real Estate, Professional Services And Administrative & Support Services") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Real Estate, Professional Services And Administrative & Support Services") {
             realestateArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
             })
         }
 
-        if (data.year >= 2016 && data.level_3 == "Other Services Industries") {
+        if (data.year >= parseInt(selectedYear[0]) && data.year <= parseInt(selectedYear[1]) && data.level_3 == "Other Services Industries") {
             otherservicesArray.push({
                 x: data.year,
                 y: isNaN(data.value) ? 0 : data.value
@@ -290,34 +296,4 @@ window.addEventListener('DOMContentLoaded', async () => {
             'data': accomodationArray,
         }
     ])
-})
-
-// checkLegends();
-
-// function checkLegends() {
-//     var allLegends = document.querySelectorAll(".legend input[type='checkbox']")
-
-//     for(var i = 0; i < allLegends.length; i++) {
-//       if(!allLegends[i].checked) {
-//         chart.toggleSeries(allLegends[i].value)
-//       }
-//     }
-//   }
-
-  // toggleSeries accepts a single argument which should match the series name you're trying to toggle
-  function toggleSeries(checkbox) {
-    manconChart.toggleSeries(checkbox.value)
-  }
-
-  function toggleSeries(checkbox) {
-    wholesaleothersChart.toggleSeries(checkbox.value)
-  }
-
-  function toggleSeries(checkbox) {
-   othersChart.toggleSeries(checkbox.value)
-  }
-
-  function toggleSeries(checkbox) {
-    accomodationChart.toggleSeries(checkbox.value)
-  }
-
+}

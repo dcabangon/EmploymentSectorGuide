@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="legend.css" />
+    <link rel="stylesheet" href="styles.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -44,6 +43,17 @@
             <h5>X-year | Y-employment units</h5>
         </div>
 
+        <div id="goodsDropdown">
+            <select id="yearSpan" onchange="filterGoods()">
+                <option value="2016-2020">2016 - 2020</option>
+                <option value="2011-2015">2011 - 2015</option>
+                <option value="2006-2010">2006 - 2010</option>
+                <option value="2001-2005">2001 - 2005</option>
+                <option value="1996-2000">1996 - 2000</option>
+                <option value="1991-1995">1991 - 1995</option>
+            </select>
+        </div>
+
         <div id="manconChart" class="chart"></div>
         <div id="othersChart" class="chart"></div>
     </div>
@@ -55,36 +65,23 @@
             <h5>X-year | Y-employment units</h5>
         </div>
 
+        <div id="servicesDropdown">
+            <select id="yearSpan" onchange="filterServices()">
+                <option value="2016-2020">2016 - 2020</option>
+                <option value="2011-2015">2011 - 2015</option>
+                <option value="2006-2010">2006 - 2010</option>
+                <option value="2001-2005">2001 - 2005</option>
+                <option value="1996-2000">1996 - 2000</option>
+                <option value="1991-1995">1991 - 1995</option>
+            </select>
+        </div>
 
-        <!-- <div id="wrapper"> -->
-            <div id="wholesaleothersChart" class="chart"></div>
-        <!-- </div> -->
-        <div id="accomodationChart" class="chart"></div>
-    </div>
-
-
-
-    <!-- <main>
-    <div style="height:80vh" id="goodsContainer">
-        <div id="manconChart" class="chart"></div>
-        <div id="othersChart" class="chart"></div>
-    </div>
-
-    <div style="height:80vh" id="servicesContainer">
         <div id="wholesaleothersChart" class="chart"></div>
         <div id="accomodationChart" class="chart"></div>
     </div>
-    </main> -->
 
-    <!-- <div class="legend">
-        <div>
-            <input type="checkbox"  checked onclick="toggleSeries(this)" value="Manufacturing"><label>Manufacturing</label>
-        </div>
 
-        <div>
-            <input type="checkbox"  checked onclick="toggleSeries(this)" value="Construction"><label>Construction</label>
-        </div>
-    </div> -->
+
 
 
 
