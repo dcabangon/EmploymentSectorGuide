@@ -78,7 +78,7 @@ Wireframes for both mobile and desktop verson can be found ![HERE](files/Wirefra
 |Category |Input/Actions | Output/Errors |
 |---------|-----------------------------|---------------------|
 |Overall | Mobile Responsive Check| Charts does not fully adjust to the smallest screen size(mobile) |
-|Chart Fucntion| On load | Displays sectors. Color is monochrome to match the motif of site|
+|Chart Function| On load | Displays sectors. Color is monochrome to match the motif of site|
 | | Clicking on colored icon legend | Will toggle on and off the data of the chosen sector|
 | | Hovering accross the chart| Will show the legend and numeric value. Partner chart will mimic the position hovered. |
 | | Selecting year span from dropdown | Will select data from specific year span |
