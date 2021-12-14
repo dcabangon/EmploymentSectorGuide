@@ -20,7 +20,7 @@ US01. As a user, I want to compare each sector with the others.
 
 #### Wireframe
 
-![Responsive Wireframe!](files/Wireframe-Mock.pdf "Wireframe")
+![Responsive Wireframe!](files/Wireframe-Mock.png "Wireframe")
 Wireframes for both mobile and desktop verson can be found ![HERE](files/Wireframe.pdf)
 
 #### 5 Planes of UI/UX
