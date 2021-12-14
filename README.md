@@ -20,8 +20,8 @@ US01. As a user, I want to compare each sector with the others.
 
 #### Wireframe
 
-![Display sample on different devices upon loading](files/Wireframe.pdf)
-Wireframes for both mobile and desktop verson can be found here
+![Responsive Wireframe!](files/Wireframe-Mock.pdf "Wireframe")
+Wireframes for both mobile and desktop verson can be found ![HERE](files/Wireframe.pdf)
 
 #### 5 Planes of UI/UX
 
@@ -98,14 +98,11 @@ Wireframes for both mobile and desktop verson can be found here
      > `gh repo clone dcabangon/EmploymentSectorGuide`
 
 * Dependencies used
-   * Bootstrap (for my CSS)
-      * I used bootstrap in my entire UI web application because it's super easy to manipulate html elements and they also provide basic element designs where I was able to save a lot time in designing like my buttons, navbar, etc.
-
    * Apexcharts
-      * I used only one chart just to show that I am able to use a third party chart library. You may find the chart in About me tab.
+      * To house the main content of the site
 
-   * Google fonts and Font awesome
-      * These two libraries were used for my fonts and icons. They have cool fonts and icons.
+   * Google fonts, Fontawesome and Getty
+      * These were used to improve the design of the site
 
 
 ### CREDITS
