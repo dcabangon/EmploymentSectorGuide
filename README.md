@@ -15,7 +15,7 @@ Given that data organization is its backbone, it would provide the user a system
 
 US01. As a user, I want to be able to navigate easily throughout the application.<br>
 US02. As a user, I want to see which employment sectors are lacking and which are well maintained.<br>
-US03. As a user, I want to be able to see the workforce count history of each employment sector  through the years. <br>
+US03. As a user, I want to be able to see the workforce count history of each employment sector. <br>
 US04. As a user, I want to compare each sector with the others.
 
 #### Wireframe
