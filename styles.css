@@ -19,6 +19,8 @@ p{
 	padding-bottom: 3px;
 }
 
+/* NAVBAR */
+
 nav{
 	height: auto;
 	align-items: center;
@@ -26,7 +28,8 @@ nav{
 	z-index: 1;
 	background-color: #010307;
 	width: 100%;
-
+	display: flex;
+	justify-content: center;
 }
 
 nav a{
@@ -52,6 +55,22 @@ a:hover {
 	color: #0F2F4F;
   }
 
+  ul{
+	  display: flex;
+	  text-decoration: none;
+  }
+
+  ul li{
+	  list-style: none;
+	  text-align: center ;
+  }
+
+  .name{
+	  padding-top: 10px;
+  }
+
+/* HOME */
+
 #home{
 	padding-top: 50px;
 	height: 600px;
@@ -65,11 +84,12 @@ a:hover {
 	justify-content: center;
 }
 
+/* ABOUT */
+
 #about{
 	height: auto;
 	width: 100%;
 	background-color: #4D4D4D;
-	/* display: flex; */
 	align-items: center;
 	justify-content: center;
 }
@@ -77,10 +97,11 @@ a:hover {
 #about > div {
 
 	padding: 30px 160px;
-	/* width: 80%; */
 	color: #B3B3B3;
 	line-height: 1.8;
 }
+
+/* MAIN CONTENT */
 
 .chart-heading{
 	width: 100%;
@@ -116,3 +137,18 @@ a:hover {
 	width: 100%;
 	padding: 15px;
 }
+
+
+/* MOBILE */
+
+
+@media only screen and (max-width: 600px) {
+	.name{
+		display: none;
+	}
+	
+	#about > div{
+		padding: 30px 30px;
+	}
+
+  }

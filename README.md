@@ -11,210 +11,95 @@ Given that data organization is its backbone, it would provide the user a system
 
 ### UI/UX
 
+#### User Stories
 
+US01. As a user, I want to be able to navigate easily throughout the application.
+US02. As a user, I want to see which employment sectors are lacking and which are well maintained.
+US01. As a user, I want to be able to see the workforce count history of each employment sector  through the years. 
+US01. As a user, I want to compare each sector with the others.
 
+#### Wireframe
+
+![Display sample on different devices upon loading](files/Wireframe.pdf)
+Wireframes for both mobile and desktop verson can be found here
+
+#### 5 Planes of UI/UX
+
+1. Strategy
+    - Site/app exists to serve employers or employees essential and numeric data on the different employment sectors.  
+2. Scope
+    - The site gives off the # of employees for each sector in the selected year.
+    - User can select a year span to show the data comparison of each sector.
+3. Structure
+    - The site contain data from 1991 up to 2020.
+    - The Goods Producing Industries are divided into 3 catrgories which you can toggle on and off to narrow down the info you need on the screen.
+    - The Sercices Producing Industries are divided into 7 Categories which you can toggle on and off to narrow down the info you need on the screen.
+4. Skeleton
+    - Elements are organized in a one pager website format.
+    - Designed with a Sticky nav on top.
+    - Header banner contains the logo for the 1st section.
+    - About Us will contain text information on the site, this will form the second section.
+    - Goods Producing will contain charts following the Goods sectors to form the fourth section.
+    - Services producing contains charts following the Sevices Sector to forn the last section.
+    - Easy flow on information as users/viewrs will follow our normal process of reading info of left to right and top to bottom.
+5. Surface
+    - Fonts will take the Sans serif route to give of a formal and modern look to it
+    - Blue color motif to give of the professional feeling to the user, monochrome blue was used to inddicate the info in the apex charts.
+    - Styled it bt a one pager with a smooth scrolling effect animation for better interaction with the user.
+    - Easy access to each section due to the sticky nav inclusion.
 
 
 ### FEATURES
+
+ The sites’ main feature is the interactive charts where the user can see the different numeric data of the different sectors featured.
+ The side by side charts also feature its synchronous nature where in the event of a hover action, the indicator from where you are pointing the cursor, the partner chart will follow its location.
+ Additionally, It also features a drop down where you can select different time frames and project data from the selected one.
+
+ With regards to pending implementation, the site has potential to be a job portal, with this site being the intro page for it. User can be educated to the current status of the employment industries and will be able to help them make a more informed decisions regarding their carreer path or future choices
+
+ For the bugs and limitations, I find that I always need to refresh the page to get it to work properly, resizing the window from a larger size to a smaller one, and vice versa.
 
 
 
 ### TECHNOLOGIES USED
 
 * HTML
-   * To build my web page
+   * To house site content
 
 * CSS
-   * To customize my html elements
+   * Run smooth scroll animation custom elements of the site
 
 * Javascript
-   * I used javascript to control all the functionalities of my application, it is like the brain of my application
-   * This is the main language I used to implement all the third part libraries I used
-   * Some of the advance method of the script were used like forEach, array.map, etc
-   * You may find the scripts [here](scripts)
+   * Used mainly for the functions of the apex map, to filter and map the information.
 
-* Visual Studio Code
-   * IDE that I used for this project because it's easy to code here and easy to manage your files and data
 
 ### TEST CASES
-<table>
-   <tr>
-      <th colspan=2>Home Page
-   <tr>
-   <tr>
-      <th>
-         <img width="441" height="1">
-         <small>Action</small>
-      </td>
-      <th>
-         <img width="441" height="1">
-         <small>Expected Result</small>
-      </td>
-   <tr>
-   <tr>
-      <td>Click "Let's find a place to relax" button</td>
-      <td>Redirects to "Maps" tab</td>
-   <tr>
-   <tr>
-      <td>Click "Home" link</td>
-      <td>Goes to "Home" page</td>
-   <tr>
-   <tr>
-      <td>Click "Maps" link</td>
-      <td>Goes to "Maps" page</td>
-   <tr>
-   <tr>
-      <td>Click "About Me" link</td>
-      <td>Goes to "About Me" page</td>
-   <tr>
-   <tr>
-      <th colspan=2>Maps Page
-   <tr>
-   <tr>
-      <th>
-         <img width="441" height="1">
-         <small>Action</small>
-      </td>
-      <th>
-         <img width="441" height="1">
-         <small>Expected Result</small>
-      </td>
-   <tr>
-   <tr>
-      <td>Click Zoom in/out buttons</td>
-      <td>Map zooms in/out</td>
-   <tr>
-   <tr>
-      <td>
-         <img src="images/your-position.png">
-         <p>Click this icon</p>
-      </td>
-      <td>Navigates to your current position</td>
-   <tr>
-   <tr>
-      <td>
-         <img src="images/overlays.png">
-         <p>Hover to this icon</p>
-      </td>
-      <td>Shows taxi and weather checkboxes</td>
-   <tr>
-   <tr>
-      <td>Click "Taxi Available" checkbox</td>
-      <td>Shows all taxis available in Singapore</td>
-   <tr>
-   <tr>
-      <td>Click "Check Weather" checkbox</td>
-      <td>Shows all weather condition icons in Singapore</td>
-   <tr>
-   <tr>
-      <td>Click a place under "Suggested Places"</td>
-      <td>
-         <ul>
-            <li>Description modal pops up</li>
-            <li>Navigates to the selected place</li>
-         </ul>
-      </td>
-   <tr>
-   <tr>
-      <td>Click "MALLS" button</td>
-      <td>Shows all malls in Singapore</td>
-   <tr>
-   <tr>
-      <td>Search mall (after "MALLS" button is clicked)</td>
-      <td>Shows all malls via search input</td>
-   <tr>
-   <tr>
-      <td>Click "PARKS" button</td>
-      <td>Shows all parks in Singapore</td>
-   <tr>
-   <tr>
-      <td>Search park (after "PARKS" button is clicked)</td>
-      <td>Shows all malls via search input</td>
-   <tr>
-   <tr>
-      <th colspan=2>About Me Page
-   <tr>
-   <tr>
-      <th>
-         <img width="441" height="1">
-         <small>Action</small>
-      </td>
-      <th>
-         <img width="441" height="1">
-         <small>Expected Result</small>
-      </td>
-   <tr>
-   <tr>
-      <td>Go to "About Me" page</td>
-      <td>
-         <ul>
-            <li>Should see MY STORY content</li>
-            <li>Should see Stress statistics chart with content</li>
-            <li>Should see Journet to relaxation content</li>
-            <li>Should see Quick guide content with image</li>
-            <li>Should see footer quote</li>
-         </ul>
-      </td>
-   <tr>
-   <tr>
-      <th colspan=2>Mobile size page
-   <tr>
-   <tr>
-      <th>
-         <img width="441" height="1">
-         <small>Action</small>
-      </td>
-      <th>
-         <img width="441" height="1">
-         <small>Expected Result</small>
-      </td>
-   <tr>
-   <tr>
-      <td>
-         <img src="images/home-page-mbl.png">
-         <ol>
-            <li>Adjust your screen to mobile size</li>
-            <li>Go to home page</li>
-         </ol>
-      </td>
-      <td>Should be able to adjust to mobile screen size</td>
-   <tr>
-   <tr>
-      <td>
-         <img src="images/maps-page-mbl.png">
-         <ol>
-            <li>Adjust your screen to mobile size</li>
-            <li>Go to maps page</li>
-         </ol>
-      </td>
-      <td>Should be able to adjust to mobile screen size</td>
-   <tr>
-   <tr>
-      <td>
-         <img src="images/about-me-page-mbl.png">
-         <ol>
-            <li>Adjust your screen to mobile size</li>
-            <li>Go to about me page</li>
-         </ol>
-      </td>
-      <td>Should be able to adjust to mobile screen size</td>
-   <tr>
-</table>
+
+|Category |Input/Actions | Output/Errors |
+|---------|-----------------------------|---------------------|
+|Overall | Mobile Responsive Check| Charts does not fully adjust to the smallest screen size(mobile) |
+|Chart Fucntion| On load | Displays sectors. Color is monochrome to match the motif of site|
+| | Clicking on colored icon legend | Will toggle on and off the data of the chosen sector|
+| | Hovering accross the chart| Will show the legend and numeric value. Partner chart will mimic the position hovered. |
+| | Selecting year span from dropdown | Will select data from specific year span |
+|Nav Bar| Hover | will highlight button |
+| | On press | Page will scroll down to button selection - section |
+| | On load | Sticks to the top |
+| | Responsive | Will hide text on mobile size but retain icons |
+
 
 ### PLATFORM USED
 
 * Github for CI/CD
-* Access live [Web Application](https://bladshed.github.io/Assignment-Project-1/) via Github
+* Access live [Web Application](https://github.com/dcabangon/EmploymentSectorGuide) via Github
 * To deploy my project to your local machine
-   1. Go to [Assignment-Project-1](https://github.com/bladshed/Assignment-Project-1)
+   1. Go to [https://github.com/dcabangon/EmploymentSectorGuide](https://dcabangon.github.io/EmploymentSectorGuide/)
    2. Download my project repository
-     > `gh repo clone bladshed/Assignment-Project-1`
+     > `gh repo clone dcabangon/EmploymentSectorGuide`
+
 * Dependencies used
    * Bootstrap (for my CSS)
       * I used bootstrap in my entire UI web application because it's super easy to manipulate html elements and they also provide basic element designs where I was able to save a lot time in designing like my buttons, navbar, etc.
-
-   * Leaflet
-      * I used leaflet for my maps (Maps tab), the reason why I chose Leaflet is because it is beginner friendly and the guides from their web page is not that complicated to understand. Also, this is the library that we used in all of our map lessons.
 
    * Apexcharts
       * I used only one chart just to show that I am able to use a third party chart library. You may find the chart in About me tab.
@@ -222,10 +107,15 @@ Given that data organization is its backbone, it would provide the user a system
    * Google fonts and Font awesome
       * These two libraries were used for my fonts and icons. They have cool fonts and icons.
 
+
 ### CREDITS
-* For my mall images 
-   * [sg.hotels.com](https://sg.hotels.com/go/singapore/best-singapore-shopping-malls)
-* For my park images 
-   * [timeout.com](https://www.timeout.com/singapore/things-to-do/the-prettiest-parks-in-singapore)
-* For my code snippets, tutorial, questions and saviour of all developers
-   * [Google](https://www.google.com/)
+* Employment Statistics
+   * [singstat.gov.sg](https://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=15659)
+* Header Image 
+   * [Getty](www.gettyimages.com)
+* Icons
+   * [Fontawesome](https://fontawesome.com)
+* Fonts
+   * [GoogleFonts](https://fonts.google.com)
+* Code Snippets
+   * [SmoothScroll](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp)
